@@ -1,0 +1,47 @@
+
+.navbar button{
+      width:100px;
+      height:45px;
+      border-radius: 45px;
+      cursor:pointer;
+      border: none;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-weight: bold;
+      box-shadow: 0px 8px 15px
+      rgba(0, 0,0, 0.1);
+      transition: all 0.3s ease;
+      background-color:black;
+      margin-right: 100px;
+  }
+  .navbar button:hover{
+      background: black;
+      transform: translateY(-7px);
+      color: white;
+      box-shadow: 0px 10px 25px
+      rgba(46,223, 229,0.445);
+  }
+
+
+  .navbar img{
+    width: 100px;
+    height: 100px;
+    border-radius: 100%;
+    overflow: hidden;
+    margin-top: -6px;
+    margin-left: 100px;
+  }
+  .navbar{
+      background-color: yellow;
+      
+  }
+  .navbar a{
+      color:white
+  }
+  .navbar h1{
+      margin-left: 0px;
+  }
+  /* .navbar div.sahil{
+      display:inline
+
+  } */

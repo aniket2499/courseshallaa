@@ -1,0 +1,10 @@
+.container-fluid{
+    height: 720px;
+    display: flex;
+    justify-content: center;
+}
+
+form{
+    padding-top: 250px;
+    width: 20%;
+}

@@ -1,0 +1,26 @@
+<input type="hidden" value="{{object.studentusername}}" id="studentusername">
+<input type="hidden" value="{{object.teacherusername}}" id="teacherusername">
+<input type="hidden" value="{{object.coursename}}" id="coursename">
+<input type="hidden" value="{{object.id}}" id="newid">
+
+<div class="contianer">
+        <h1> {{object.coursename}}</h1>
+        <h3> Assignment {{object.serialnumber}}</h3>
+        
+                <form id="fileupload" method="POST" enctype="multipart/form-data">
+                        <div class="input-group mb-3 p-3">
+                                <input type="file" class="form-control" id="textfile" name="textfile"  aria-label="Upload">
+                                <button class="btn btn-success" type="submit" id="button" aria-describedby="textfile">Upload</button>
+                        </div>
+                </form>
+        
+        <div class="uploaded_assignments">
+                <ul id="asslist">
+
+                </ul>
+        </div>
+</div>
+
+
+<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+<script src="/public/js/enrolledstudentsassignment.js"></script>

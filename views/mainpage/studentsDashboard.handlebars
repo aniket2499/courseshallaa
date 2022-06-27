@@ -1,0 +1,68 @@
+<div class="container-fluid p-5">
+    <div class="row border-bottom border-secondary">
+      <h3 style="font-family: 'Macondo', cursive;color:blue">All Courses</h3>
+    </div>
+    <div class="row bg-light">
+      {{#each courses}}
+      <div class="card m-3" style="width: 18rem;">
+        <img class="card-img-top" src="/public/images/course.jpg" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">{{this.coursename}}</h5>
+          {{!-- <p class="card-text">{{this.description}}</p> --}}
+          <div class="row">
+            <div class="col-5">
+              <a href="/student/not_enrolled/{{this._id}}" class="btn btn-dark">Details</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      {{/each}}
+    </div>
+
+    <div class="row border-bottom border-secondary border-1">
+      <h3 style="font-family: 'Macondo', cursive;color:blue">Recommended Courses</h3>
+    </div>
+    <div class="row bg-light">
+      {{#each recom}}
+      <div class="card m-3" style="width: 18rem;">
+        <img class="card-img-top" src="/public/images/recommend.jpg" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">{{this.coursename}}</h5>
+          {{!-- <p class="card-text">{{this.description}}</p> --}}
+          <div class="row">
+            <div class="col-5">
+              <a href="/student/not_enrolled/{{this._id}}" class="btn btn-dark">Details</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      {{/each}}
+    </div>
+    {{!-- <div class="row d-flex justify-content-center p-5">
+      <a href="/mainpage/enrollcourse" class="btn btn-dark w-25"> Enroll Course </a>
+    </div> --}}
+    <div class="row border-bottom border-secondary border-1">
+      <h3 style="font-family: 'Macondo', cursive;color:blue">Enrolled Courses</h3>
+    </div>
+    <div class="row bg-light">
+      {{#each enrolled}}
+      <div class="card m-3" style="width: 18rem;">
+        <img class="card-img-top" src="/public/images/enroll.jpg" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">{{this.coursename}}</h5>
+          <div class="row">
+            <div class="col-5">
+              <a href="/student/enrolled/{{this.course_id}}" class="btn btn-dark">Details</a>
+            </div>
+            <div class="col-5">
+              <a href="/student/enrolled/videos/{{this.course_id}}" class="btn btn-dark">Videos</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      {{/each}}
+    </div>
+
+
+
+

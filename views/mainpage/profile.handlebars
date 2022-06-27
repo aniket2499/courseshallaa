@@ -1,0 +1,28 @@
+
+
+<div class="container p-5">
+  <div class="row bg-light">
+      <div class="row bg-light pt-3" id="description" text-align="center">
+            <h1><center> Hello {{userDetails.username}}! </center></h1>
+        <br>
+        </div>
+        <div>
+        <ul>
+            
+            <li>Name: {{userDetails.firstname}} {{userDetails.lastname}}</li>
+            <br>
+            <li>{{#if userDetails.isStudent}} Joined as a {{userDetails.usertype}}{{/if}}
+                {{#if userDetails.isTeacher}} Joined as a {{userDetails.usertype}} {{/if}} </li>
+            <br>
+
+            <li>Email: {{userDetails.email}}</li>
+
+        </ul>
+      </div>
+    </div>
+
+</div>
+
+
+{{!-- <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+<script src="/public/js/assignmentuploadteacher.js"></script> --}}

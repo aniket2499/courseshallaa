@@ -1,0 +1,124 @@
+<div class="container p-5">
+  <div class="row bg-light">
+    <div class="btn-group pb-3 ps-0 pe-0">
+      <a href="#description" class="btn btn-primary active" aria-current="page">Course Info</a>
+      <a href="#uploadassignments" class="btn btn-primary">Upload Assignments</a>
+      <a href="#studentssummary" class="btn btn-primary">Student Summary</a>
+    </div>
+    </div>
+      <div class="row bg-light" id="description">
+        <h1> {{coursedata.coursename}} </h1>
+        <div class="pt-3">
+          <div class="row p-3">
+            <b>Description:</b>
+            {{{coursedata.description}}}
+          </div>
+        </div>
+        <div class="pt-3">
+          <div class="row p-3">
+            <b>Start Date:</b>
+            {{coursedata.startdate}}
+          </div>
+        </div>
+        <div class="pt-3">
+          <div class="row p-3">
+            <b>End Date: </b>
+            {{coursedata.enddate}}
+          </div>
+        </div>
+      </div>
+      <div class="row pt-5" id="uploadassignments">
+        <h3> Upload Assignments: </h3>
+      </div>
+      <form id="assignment" class="border bg-dark" enctype="multipart/form-data">
+          <div class="mb-3 p-3">
+            <input type="hidden" id="sequencenumber" value="0">
+            <div class="row p-2">
+                <label for="assignment_name" class="form-label" style="color:aliceblue">Assignment Name</label>
+                <input type="text" class="form-control" id="assignment_name" placeholder="Assignment Name">
+            </div>
+          </div>
+          <div class="mb-3 p-3">
+            <div class="row p-2">
+              <label for="assignmentdescription" class="form-label" style="color:aliceblue">Assignment Description</label>
+              <div id="assignmentdescription" class="form-control row" style=" height: 300px" type="input" style=""></div>
+            </div>
+          </div>
+          <div class="mb-3 p-3">
+            <div class="row pt-3">
+                <div class="col-6 ps-2">
+                    <label for="startdate" class="form-label" style="padding-left:12px; color:aliceblue"> Start Date </label>
+                    <div class="input-group date" id="startdatepicker">
+                        <input type="date" class="form-control" id="startdate" name="startdate">
+                    </div>
+                </div>
+                <div class="col-6 pe-2">
+                    <label for="enddate" class="form-label" style="padding-left: 12px; color:aliceblue"> End Date </label>
+                    <div class="input-group date" id="enddatepicker">
+                        <input type="date" class="form-control" id="enddate" name="enddate">
+                    </div>
+                </div>
+            </div>
+          </div>
+          <input type="hidden" value="{{coursename}}" name="coursename" id="coursename">
+          <div class="row" >
+                <div class="container" style="display: flex; justify-content:center;">
+                    <span class="m-3">
+                        <button class="btn btn-success p-2" id="create" style="width: 150px;"> Create </button>
+                    
+                        <button class="btn btn-danger p-2" id="updatefinal" style="width: 150px;"> Update </button>
+                    </span>
+                </div>
+          </div>
+      </form>
+    <div class="container bg-light p-5" id="assignments">
+      
+    </div>
+    {{#if studentsenrolled}}
+    <div class="row bg-light mt-3 ms-0 me-0" id="studentssummary">
+      <h3> Students Summary </h3>
+    </div>
+      <table class="table table-dark table-striped">
+        <thead>
+            <tr>
+                <th> Profile Pic</th>
+                <th> First Name </th>
+                <th> Last Name </th>
+                <th> Average Grades </th>
+            </tr>
+        </thead>
+        <tbody>
+            
+            {{#each studentsenrolled}}
+                <tr>
+                    <td> <img src="/public/images/profileimg.webp" style="height:100px; width: 100px;" alt="not found"></td>
+                    <td> {{this.firstname}}</td>
+                    <td>{{this.lastname}}</td>
+                    <td>{{this.grade}}</td>
+                </tr>
+            {{/each}}
+        </tbody>
+      </table>
+      {{else}}
+        {{#if buttonrequired}}
+        <div class="row p-5 d-flex justify-content-center">
+          <a type="submit" href="/mainpage/deplaycourse " id="deploycourse" style="width: 150px" class="btn btn-primary"> Add Course </a>
+        </div>
+        {{else}}
+          <div class="pt-3">
+            <div class="row p-3">
+              <b>Students Summary </b>
+              No Student has enrolled this course.
+            </div>
+          </div>
+        {{/if}}
+
+    {{/if}}
+</div>
+
+
+<link rel="stylesheet" href="/public/css/assignmentform.css">
+<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+<link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
+<script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
+<script src="/public/js/assignmentuploadteacher.js"></script>

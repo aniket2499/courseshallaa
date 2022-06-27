@@ -1,0 +1,69 @@
+<div class="container p-5">
+  <div class="row bg-light">
+    <div class="btn-group pb-3 ps-0 pe-0">
+      <a href="#description" class="btn btn-primary active" aria-current="page">Course Info</a>
+      <a href="#assignments" class="btn btn-primary">Upload Assignments</a>
+      <a href="#studentssummary" class="btn btn-primary">Student Summary</a>
+    </div>
+    </div>
+      <div class="row bg-light pt-3" id="description">
+        <input type="hidden" value="{{course.coursename}}" id="coursename">
+        <input type="hidden" value="{{course.username}}" id="teacherusername">
+        <h1> {{course.coursename}} </h1>
+        <div class="pt-3">
+          <div class="row p-3">
+            <b>Description:</b>
+            {{{course.description}}}
+          </div>
+        </div>
+        <div class="pt-3">
+          <div class="row p-3">
+            <b>Teacher:</b>
+            {{course.username}}
+          </div>
+        </div>
+        <div class="pt-3">
+          <div class="row p-3">
+            <b>Start Date:</b>
+            {{course.startdate}}
+          </div>
+        </div>
+        <div class="pt-3">
+          <div class="row p-3">
+            <b>End Date: </b>
+            {{course.enddate}}
+          </div>
+        </div>
+      </div>
+      <div class="row bg-light " id="assignments">
+            <h3> Assignments </h3>
+            <table id="example" class="table table-dark table-striped" style="width:100%">
+    
+        <thead>
+            <tr>
+                <th> Sr. No </th>
+                <th> Assignment Title </th>
+                <th> Post Grades</th>
+            </tr>
+        </thead>
+        <tbody>
+            
+            {{#each course.assignments}}
+                <tr>
+                    <input type="hidden" value="{{assignment_id}}" id="ass_{{this.studentusername}}">
+                    {{!-- <td> <input type="hidden" value="{{this.studentusername}}" id="{{this.studentusername}}"></td> --}}
+                    <td> Assignment {{this.sequencenumber}}</td>
+
+                    <td>  {{this.assignment_name}} </td>
+                    <td> <a href="/student/assignmentssubmission/{{this._id}}" class="btn btn-primary buttonclick" id="{{_id}}"> Submit Assignment </td>
+                </tr>
+            {{/each}}
+        </tbody>
+    
+    </table>
+        </div>
+</div>
+
+
+<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+<script src="/public/js/enrolledstudentsassignment.js"></script>

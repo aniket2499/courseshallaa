@@ -1,0 +1,29 @@
+<div class="container p-5">
+  <div class="row bg-light">
+    </div>
+      <div class="row bg-light pt-3" id="description">
+        <h1> {{coursename}} </h1>
+        <h3> Lecture {{index}} </h3>
+        <div>
+            <video controls width="400">
+                <source src="{{curVideo}}"
+                        type="video/webm">
+                <source src="{{curVideo}}"
+                        type="video/mp4">
+            </video>
+        </div>
+        <br>
+        <br>
+        {{#if showButton}}
+            <form action="/student/videoCompleted" method="post">
+                <label for="btnn" class="form-label"></label>
+                <button name="btnn" id="btnn" value="{{enrolledCourseId}}#{{seq}}#{{len}}">Mark as watched</button>
+            </form>
+        {{/if}}
+        <a href="/student/enrolled/{{enrolledCourseId}}">Back to course page</a>
+      </div>
+</div>
+
+
+{{!-- <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+<script src="/public/js/assignmentuploadteacher.js"></script> --}}

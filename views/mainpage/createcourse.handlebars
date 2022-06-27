@@ -1,0 +1,57 @@
+
+<div class="container pt-5">
+    <form action="/mainpage/addcourse" method="POST" id="#addcourse">
+        <div class="mb-3">
+            <div class="row">
+                <div class="col-6 ps-0">
+                    <label for="coursename" class="form-label" style="padding-left: 12px;">Course Name</label>
+                    <input type="text" class="form-control" id="coursename" name="coursename">
+                </div>
+                <div class="col-6 pe-0">
+                    {{!-- <label for="shortdescription" class="form-label">Short Description</label>
+                    <textarea class="form-control" id="shortdescription" name="shortdescription" rows="3"></textarea> --}}
+                    <label for="coursetag" class="form-label" style="padding-left: 12px;">Course Tag</label>
+                    {{!-- <input type="text" class="form-control" id="coursetag" name="coursetag"> --}}
+                    <select class="form-select" id="coursetag" name = "coursetag">
+                    </select>
+                </div>
+            </div>
+            <div class="row pt-3">
+                <label for="description" class="form-label">Description</label>
+                <div id="description" class="form-control row" style=" height: 300px" type="input"></div>
+            </div>
+            
+            {{!-- <div class="row pt-3">
+                <label for="description" class="form-label">Description</label>
+                <textarea class="form-control" id="description" name="description" rows="5"></textarea>
+            </div> --}}
+            <div class="row pt-3">
+                <div class="col-6 ps-0">
+                    <label for="startdate" class="form-label" style="padding-left:12px;"> Start Date </label>
+                    <div class="input-group date" id="startdatepicker">
+                        <input type="date" class="form-control" id="startdate" name="startdate">
+                    </div>
+                </div>
+                <div class="col-6 pe-0">
+                    <label for="enddate" class="form-label" style="padding-left: 12px;"> End Date </label>
+                    <div class="input-group date" id="enddatepicker">
+                        <input type="date" class="form-control" id="enddate" name="enddate">
+                    </div>
+                </div>
+            </div>
+            <div class="row d-flex justify-content-center p-5">
+                <button type="submit" class="btn btn-success w-25" id="addcoursebutton"> Add Course </button>
+            </div>
+            <div class="error">
+              
+            </div>
+        </div>
+    </form>
+</div>
+
+<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+<link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
+<script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
+<script src="/public/js/teachersCreateCourse.js"></script>
+
+{{!-- <script src="/public/js/createcourse.js"></script> --}}
